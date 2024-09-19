@@ -1,18 +1,26 @@
 import PropTypes from "prop-types";
 import styles from "./thread-input.module.css";
 import { useState } from "react";
+import { getThreads } from "./feed";
 
-const ThreadInput = ({ className = "" }) => {
+const ThreadInput = ({ className = "" ,getThreads}) => {
   const [input,setInput]=useState("");
   const postThread = async()=>{
     try {
       const request = await fetch('/api/threads',{
         method:"POST",
+        headers: {
+          "Content-Type": "application/json",  // Add the Content-Type header
+        },
         body:JSON.stringify({content:input,user:"Vamshibaja"})
       });
       const data = await request.json();
-      getThreads()
       console.log("thread-input.js | data is ",data);
+      // if (getThreads) {
+        getThreads();  // Call the getThreads function to refresh the feed
+      // }
+      setInput("")
+     
 
     } catch (error) {
       console.log("Error ",error)

@@ -10,7 +10,7 @@ const Feed = ({ className = "" }) => {
     try {
       const request=await fetch('/api/threads');
       const data= await request.json()
-      console.log("Data is",data);
+      console.log("feed.js | Data is",data);
       setThreads(data);
     } catch (error) {
       console.log("Error ",error)
@@ -25,15 +25,19 @@ const Feed = ({ className = "" }) => {
       {threads && threads.data.map((thread)=>{
         return (
           <Thread
+            key={thread._id}
+            id={thread._id}
             authorImage="/avatar1.svg"
             threadContent={thread.content}
             likes={`${thread.likes || 0} likes`}
             timeSpent={thread.timestamp}
             username={thread.user}
+            getThreads={getThreads}
+            
           />
         )
       })}
-      <Thread
+      {/* <Thread
         authorImage="/avatar1.svg"
         threadContent="I’ve been exploring ways of setting up variables in Figma if you have two different sets of global colours for light and dark themes with multiple brands. If you want to learn more about it, DM me, please"
         likes="7 Likes"
@@ -46,21 +50,8 @@ const Feed = ({ className = "" }) => {
         likes="2 Likes"
         timeSpent="2min"
         username="aura"
-      />
-      <Thread
-        authorImage="/avatar2@2x.png"
-        threadContent="Hold onto your seats, folks! The new iPhone is coming in hot, ready to rock our world! Imagine the stunning photos and videos I'll capture with this beauty! 📸💥 #BringItOnNewiPhone #BeyondExcited"
-        likes="16 Likes"
-        timeSpent="2min"
-        username="aura"
-      />
-      <Thread
-        authorImage="/avatar2@2x.png"
-        threadContent="I’ve been exploring ways of setting up variables in Figma if you have two different sets of global colours for light and dark themes with multiple brands. If you want to learn more about it, DM me, please"
-        likes="7 Likes"
-        timeSpent="2min"
-        username="aura"
-      />
+      /> */}
+      
     </div>
   );
 };
