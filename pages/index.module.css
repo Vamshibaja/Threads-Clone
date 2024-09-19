@@ -1,0 +1,27 @@
+.content,
+.contentcontainer,
+.feed {
+  display: flex;
+  justify-content: flex-start;
+}
+.contentcontainer {
+  align-self: stretch;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 46px;
+}
+.content,
+.feed {
+  overflow: hidden;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.feed {
+  align-self: stretch;
+  background-color: var(--background-color);
+}
+.content {
+  width: 100%;
+  position: relative;
+  border-radius: 16px;
+}

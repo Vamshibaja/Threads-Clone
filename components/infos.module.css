@@ -1,0 +1,99 @@
+.settingsIcon,
+.trendingTopics {
+  position: relative;
+  overflow: hidden;
+}
+.trendingTopics {
+  margin: 0;
+  font-size: inherit;
+  line-height: 19px;
+  font-weight: 700;
+  font-family: inherit;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.settingsIcon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.infos1,
+.title {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.infos1 {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.design {
+  position: relative;
+  letter-spacing: 1px;
+  line-height: 19px;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.threadsdesktop {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--text-color);
+}
+.kThreads,
+.threadsdesktop {
+  position: relative;
+  line-height: 19px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.topic,
+.treanding {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-11xs);
+}
+.treanding {
+  gap: var(--gap-base);
+  font-size: var(--font-size-xs);
+  color: var(--text-color-alt);
+}
+.seeMore {
+  position: relative;
+  font-size: var(--font-size-sm);
+  line-height: 19px;
+  font-weight: 500;
+  color: var(--color-cornflowerblue);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.infos {
+  width: 317px;
+  height: 1229px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-29xl);
+  box-sizing: border-box;
+  gap: var(--gap-5xl);
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--text-color);
+  font-family: var(--font-inter);
+}
+@media screen and (max-width: 1200px) {
+  .infos {
+    display: none;
+  }
+}

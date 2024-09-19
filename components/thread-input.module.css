@@ -1,0 +1,89 @@
+.avatarIcon {
+  width: 36px;
+  position: relative;
+  height: 36px;
+}
+.infos,
+.thread {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.infos {
+  border: 0;
+  outline: 0;
+  font-weight: 500;
+  font-family: var(--font-inter);
+  font-size: var(--font-size-sm);
+  background-color: transparent;
+  align-items: flex-start;
+  color: var(--text-color);
+}
+.paperclipIcon {
+  width: 24px;
+  position: relative;
+  height: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.label {
+  cursor: pointer;
+}
+.input {
+  display: none;
+}
+.actions1 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.sendIcon {
+  width: 16px;
+  position: relative;
+  height: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.actions,
+.actions2 {
+  display: flex;
+  flex-direction: row;
+}
+.actions2 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-4xs) var(--padding-5xs) var(--padding-6xs);
+  background-color: var(--background-alt);
+  border-radius: var(--br-21xl);
+  align-items: center;
+  justify-content: center;
+}
+.actions {
+  align-self: stretch;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.infosActions,
+.threadinput {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-xs);
+}
+.infosActions {
+  flex: 1;
+  flex-direction: column;
+}
+.threadinput {
+  align-self: stretch;
+  border-bottom: 1px solid var(--border-color);
+  overflow: hidden;
+  flex-direction: row;
+  padding: var(--padding-base) var(--padding-base) var(--padding-base)
+    var(--padding-xs);
+}
