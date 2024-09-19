@@ -2,8 +2,23 @@ import ThreadInput from "./thread-input";
 import Thread from "./thread";
 import PropTypes from "prop-types";
 import styles from "./feed.module.css";
+import { useState,useEffect } from "react";
 
 const Feed = ({ className = "" }) => {
+  const [threads,setThreads]=useState([]);
+  const getThreads = async ()=>{
+    try {
+      const request=await fetch('/api/threads');
+      const data= await request.json()
+      console.log("Data is",data);
+      setThreads(data);
+    } catch (error) {
+      console.log("Error ",error)
+    }
+  };
+  useEffect(()=>{
+    getThreads();
+  },[])
   return (
     <div className={[styles.feed, className].join(" ")}>
       <ThreadInput />
