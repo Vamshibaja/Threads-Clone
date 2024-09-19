@@ -5,7 +5,7 @@ import styles from "./feed.module.css";
 import { useState,useEffect } from "react";
 
 const Feed = ({ className = "" }) => {
-  const [threads,setThreads]=useState([]);
+  const [threads,setThreads]=useState({data:[]});
   const getThreads = async ()=>{
     try {
       const request=await fetch('/api/threads');
@@ -17,11 +17,22 @@ const Feed = ({ className = "" }) => {
     }
   };
   useEffect(()=>{
-    getThreads();
+    getThreads(); 
   },[])
   return (
     <div className={[styles.feed, className].join(" ")}>
-      <ThreadInput />
+      <ThreadInput getThreads={getThreads}/>
+      {threads && threads.data.map((thread)=>{
+        return (
+          <Thread
+            authorImage="/avatar1.svg"
+            threadContent={thread.content}
+            likes={`${thread.likes || 0} likes`}
+            timeSpent={thread.timestamp}
+            username={thread.user}
+          />
+        )
+      })}
       <Thread
         authorImage="/avatar1.svg"
         threadContent="I’ve been exploring ways of setting up variables in Figma if you have two different sets of global colours for light and dark themes with multiple brands. If you want to learn more about it, DM me, please"
